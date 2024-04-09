@@ -1,0 +1,53 @@
+/* Указываю конкретный путь до конфига */
+@config "../tailwind.config.js";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* БАЗОВЫЕ КАСТОМНЫЕ СТИЛИ */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  body {
+    @apply p-4;
+  }
+
+  .form {
+    @apply w-96 mx-auto p-2gri m-2gri;
+  }
+
+  /* Используем tw-классы директивой @apply и добавляем класс 'input' в разметку */
+  .input {
+    @apply my-1gri p-2gri w-full border-0 outline-0 font-['montserrat'] placeholder:scale-100 transition bg-transparent duration-500 ease-linear focus:placeholder:scale-0;
+  }
+
+  input[type="submit"] {
+    @apply block mx-auto bg-yellow-400 rounded-xl p-1gri w-3/5;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-3xl font-bold text-center;
+    font-family: theme("fontFamily.roboto");
+  }
+}
+
+/*  
+  В функцию screen передаем значение из 'theme.screens.sm'  Вверху должен быть импорт конфига tailwind.config.js
+*/
+@media screen(sm) {
+  form {
+    background: red;
+  }
+}
