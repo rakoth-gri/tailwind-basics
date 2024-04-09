@@ -1,5 +1,4 @@
-function App() {  
-
+function App() {
   return (
     <>
       <h1 className="text-slate-500 bg-teal p-3gri md:text-yellow-500">
